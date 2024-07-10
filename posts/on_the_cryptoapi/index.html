@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYNLQKXDCY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RYNLQKXDCY');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="generator" content="Hugo 0.124.0">
+
+    
+        <meta name="google-site-verification" content="FJeEV8Eq61e0o2MnOwH64y1WgBV42wPtjOS_Z8FZl4c" />
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="A place to share interesting articles,tutorials, projects in mathematics and computer science that I do and enjoy." />
+        
+
+        
+            <meta
+                name="keywords"
+                content="Math, Mathematics, Windows, Internals, Reverse engineering" />
+        
+
+        
+            <meta name="author" content="Exists4All" />
+        
+
+    
+
+
+    <title>
+        
+            On The Cryptoapi |
+            Exists4All
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+        
+
+
+        
+        
+
+
+        <link
+            rel="stylesheet"
+            href="/css/index_d751713.min.c33e31e36698343dc458368c969e849132d12d4928b56dad50c0171f81fbce86a13522fabf2aef76391ff42a5b67df79b4233cfca5566cdcc4bd031889e09022.css"
+            integrity="sha512-wz4x42aYND3EWDaMlp6EkTLRLUkotW2tUMAXH4H7zoahNSL6vyrvdjkf9CpbZ995tCM8/KVWbNzEvQMYieCQIg==" />
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            On The Cryptoapi -
+            Exists4All
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Posts </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="https://exists4all.github.io/posts/simpepecrypter/" title="./posts/simpepecrypter/">
+                        SimpePECrypter
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="https://exists4all.github.io/posts/on_the_cryptoapi/" title="./posts/on_the_cryptoapi/">
+                        On The Cryptoapi
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="https://exists4all.github.io/posts/simple_disk_serial_spoofer_part_1/" title="./posts/simple_disk_serial_spoofer_part_1/">
+                        Simple Disk Serial Spoofer part 1
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="https://exists4all.github.io/posts/before_start/" title="./posts/before_start/">
+                        Before Start
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                On The Cryptoapi
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/exists4all/"
+                                class="cat-btn">
+                                Exists4All
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.03.17"
+                            >2024.03.17
+                        </time>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+                <div class="categories">
+                    <i
+                        class="bi bi-bookmarks"
+                        title="Categories"></i>
+                    
+                        <a
+                            href="/categories/windows/"
+                            class="cat-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/categories/cryptography/"
+                            class="cat-btn">
+                            Cryptography
+                        </a>
+                    
+                        <a
+                            href="/categories/x64dbg/"
+                            class="cat-btn">
+                            x64dbg
+                        </a>
+                    
+                        <a
+                            href="/categories/reverse-engineering/"
+                            class="cat-btn">
+                            Reverse Engineering
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/cryptoapi/"
+                            class="tag-btn">
+                            CryptoAPI
+                        </a>
+                    
+                        <a
+                            href="/tags/windows-api/"
+                            class="tag-btn">
+                            Windows API
+                        </a>
+                    
+                        <a
+                            href="/tags/hash/"
+                            class="tag-btn">
+                            Hash
+                        </a>
+                    
+                        <a
+                            href="/tags/reverse-engineering-windows/"
+                            class="tag-btn">
+                            Reverse Engineering Windows
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="https://exists4all.github.io/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="https://exists4all.github.io/posts/" class="bread-btn">
+    
+
+    
+        Posts
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="https://exists4all.github.io/posts/on_the_cryptoapi/" class="bread-btn">
+    
+
+    
+        On The Cryptoapi
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cryptoapi-basic-structure">CryptoAPI basic structure</a></li>
+    <li><a href="#example-source-code">Example source code</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#last-word">Last word</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <p>I had to work on a PE for reverse engineering for a few weeks, the PE using an extensive amount of encryption/decryption of memory fragments to make it harder to reverse engineer it. However, that PE is for another time. But I had to write a manual encrypter/decrypter for those memory fragments to be able to patch some specific parts without changing instructions size and then crypting those bytes and replacing those specific memory fragments. However it seems the key that CryptoAPI uses to do the job is not the same as the key that you could get with CryptExportKey so I decided to look inside these functions to see what the actual key is.</p>
+<hr>
+<h2 id="cryptoapi-basic-structure">CryptoAPI basic structure</h2>
+<p>CryptoAPI passes the input data as objects between its functions. The obvious reason for that is to make the attacker lifes harder. It takes your data, then hashes it with the intended algorithm, deriving its own specific key, and using them to do the job.
+So you can’t use your own key to encrypt/decrypt, instead you have to use its API to export the derived key based on your input. There are cases where you want to make your key exportable, but even then there are known vulnerabilities to make the key exportable.
+So to do a little experiment, I used <a href="https://stackoverflow.com/questions/29586097/how-to-export-aes-key-derived-using-cryptoapi?noredirect=1&amp;lq=1">this</a> code and modified it a little bit, added my own little function and then used output to reverse engineer a specific CryptoAPI.</p>
+<hr>
+<h2 id="example-source-code">Example source code</h2>
+<p>The provided source code is nothing special, I compiled the file as x64 Debug mode with C++20 on Visual Studio 2022.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#include%20%3cWindows.h%3e%0a#include%20%3cstdio.h%3e%0a#include%20%3cstdio.h%3e%0a#include%20%3ciostream%3e%0a#include%20%3ccstdio%3e%0a#include%20%3cbitset%3e%0a#include%20%3cvector%3e%0a#pragma%20comment%28lib,%20%22crypt32.lib%22%29%0a%0aBOOL%20GetExportedKey%28HCRYPTKEY%20hKey,%20DWORD%20dwBlobType,%20LPBYTE*%20ppbKeyBlob,%20LPDWORD%20pdwBlobLen%29%0a%7b%0a%20%20%20%20DWORD%20dwBlobLength;%0a%20%20%20%20*ppbKeyBlob%20=%20NULL;%0a%20%20%20%20*pdwBlobLen%20=%200;%0a%20%20%20%20//%20Export%20the%20public%20key.%20Here%20the%20public%20key%20is%20exported%20to%20a%20%0a%20%20%20%20//%20PUBLICKEYBLOB.%20This%20BLOB%20can%20be%20written%20to%20a%20file%20and%0a%20%20%20%20//%20sent%20to%20another%20user.%0a%20%20%20%20if%20%28CryptExportKey%28hKey,%20NULL,%20dwBlobType,%200,%20NULL,%20&amp;dwBlobLength%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Size%20of%20the%20BLOB%20for%20the%20public%20key%20determined.%20%5cn%22%29;%0a%20%20%20%20%7d%0a%20%20%20%20else%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20computing%20BLOB%20length.%5cn%22%29;%0a%20%20%20%20%20%20%20%20return%20false;%0a%20%20%20%20%7d%0a%20%20%20%20//%20Allocate%20memory%20for%20the%20pbKeyBlob.%0a%20%20%20%20if%20%28*ppbKeyBlob%20=%20%28LPBYTE%29malloc%28dwBlobLength%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Memory%20has%20been%20allocated%20for%20the%20BLOB.%20%5cn%22%29;%0a%20%20%20%20%7d%0a%20%20%20%20else%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Out%20of%20memory.%20%5cn%22%29;%0a%20%20%20%20%20%20%20%20return%20false;%0a%20%20%20%20%7d%0a%20%20%20%20//%20Do%20the%20actual%20exporting%20into%20the%20key%20BLOB.%0a%20%20%20%20if%20%28CryptExportKey%28%0a%20%20%20%20%20%20%20%20hKey,%0a%20%20%20%20%20%20%20%20NULL,%0a%20%20%20%20%20%20%20%20dwBlobType,%0a%20%20%20%20%20%20%20%200,%0a%20%20%20%20%20%20%20%20*ppbKeyBlob,%0a%20%20%20%20%20%20%20%20&amp;dwBlobLength%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Contents%20have%20been%20written%20to%20the%20BLOB.%20%5cn%22%29;%0a%20%20%20%20%20%20%20%20*pdwBlobLen%20=%20dwBlobLength;%0a%20%20%20%20%7d%0a%20%20%20%20else%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20exporting%20key.%5cn%22%29;%0a%20%20%20%20%20%20%20%20free%28*ppbKeyBlob%29;%0a%20%20%20%20%20%20%20%20*ppbKeyBlob%20=%20NULL;%0a%0a%20%20%20%20%20%20%20%20return%20false;%0a%20%20%20%20%7d%0a%20%20%20%20return%20true;%0a%7d%0abool%20ExportKeyBytes%28LPBYTE%20keyBlob,%20DWORD%20keyBlobLength,%20std::vector%20%3cstd::bitset%3c8%3e%3e&amp;%20KeyBytes%29%0a%7b%0a%20%20%20%20uint32_t%20NumberOfBytes%20=%20*%28uint32_t*%29%28keyBlob%20&#43;%20sizeof%28BLOBHEADER%29%29;%0a%20%20%20%20intptr_t%20StartAdrsOfKeyBytes%20=%20reinterpret_cast%3cintptr_t%3e%28%28keyBlob%20&#43;%20sizeof%28BLOBHEADER%29%20&#43;%20sizeof%28DWORD%29%29%29;%0a%20%20%20%20std::cout%20%3c%3c%20std::endl%20%3c%3c%20%22------Exctracted%20key%20bytes%20are%20as%20below--------%22%20%3c%3c%20std::endl;%0a%20%20%20%20for%20%28uint16_t%20j%20=%200;%20j%20%3c%20NumberOfBytes;%20j&#43;&#43;%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20KeyBytes.push_back%28*%28%28std::bitset%3c8%3e*%29StartAdrsOfKeyBytes%29%29;%0a%20%20%20%20%20%20%20%20StartAdrsOfKeyBytes&#43;&#43;;%0a%20%20%20%20%20%20%20%20unsigned%20long%20int%20Mask%20=%200b0000000011111111;%0a%20%20%20%20%20%20%20%20Mask%20&amp;=%20%28KeyBytes[j].to_ulong%28%29%29;%0a%20%20%20%20%20%20%20%20std::cout%20%3c%3c%20%22%20%22%20%3c%3c%20std::hex%20%3c%3c%20Mask;%0a%20%20%20%20%7d%0a%20%20%20%20std::cout%20%3c%3c%20std::endl;%0a%20%20%20%20std::cout%20%3c%3c%20%22The%20bit%20representation%20of%20key%20blob:%22%20%3c%3c%20std::endl;%0a%20%20%20%20for%20%28uint16_t%20j%20=%200;%20j%20%3c%20KeyBytes.size%28%29;%20j&#43;&#43;%29%0a%20%20%20%20%20%20%20%20std::cout%20%3c%3c%20std::bitset%3c8%3e%28%28KeyBytes[j]%29%29;%0a%20%20%20%20std::cout%20%3c%3c%20std::endl;%0a%20%20%20%20return%20true;%0a%7d%0a%0aint%20main%28%29%0a%7b%0a%20%20%20%20HCRYPTPROV%20hProv%20=%200;%0a%20%20%20%20HCRYPTKEY%20hKey%20=%200;%0a%20%20%20%20HCRYPTHASH%20hHash%20=%200;%0a%20%20%20%20DWORD%20dwCount%20=%205;%0a%20%20%20%20LPBYTE%20keyBlob%20=%20NULL;%0a%20%20%20%20DWORD%20keyBlobLength;%0a%20%20%20%20LPSTR%20keyBlobBase64%20=%20NULL;%0a%20%20%20%20DWORD%20base64Length%20=%200;%0a%20%20%20%20BYTE%20%20rgData[512]%20=%20%7b%200x01,%200x02,%200x03,%200x04,%200x05%20%7d;%0a%20%20%20%20LPWSTR%20wszPassword%20=%20%28LPWSTR%29L%22password12%22;%0a%20%20%20%20DWORD%20cbPassword%20=%20%28wcslen%28wszPassword%29%20&#43;%201%29%20*%20sizeof%28WCHAR%29;%0a%0a%20%20%20%20if%20%28!CryptAcquireContext%28%0a%20%20%20%20%20%20%20%20&amp;hProv,%0a%20%20%20%20%20%20%20%20NULL,%0a%20%20%20%20%20%20%20%20MS_DEF_PROV,%0a%20%20%20%20%20%20%20%20PROV_RSA_FULL,%0a%20%20%20%20%20%20%20%20CRYPT_VERIFYCONTEXT%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20CryptAcquireContext!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%0a%20%20%20%20%7d%0a%20%20%20%20if%20%28!CryptCreateHash%28hProv,%20CALG_MD5,%200,%200,%20&amp;hHash%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20CryptCreateHash!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%0a%20%20%20%20%7d%0a%20%20%20%20if%20%28!CryptHashData%28hHash,%20%28PBYTE%29wszPassword,%20cbPassword,%200%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20CryptHashData!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%0a%20%20%20%20%7d%0a%20%20%20%20if%20%28!CryptDeriveKey%28hProv,%20CALG_RC4,%20hHash,%20CRYPT_EXPORTABLE,%20&amp;hKey%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20CryptDeriveKey!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%0a%20%20%20%20%7d%0a%20%20%20%20if%20%28!GetExportedKey%28hKey,%20PLAINTEXTKEYBLOB,%20&amp;keyBlob,%20&amp;keyBlobLength%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20GetExportedKey!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%0a%20%20%20%20%7d%0a%0a%20%20%20%20while%20%281%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20//%20PLAINTEXTKEYBLOB:%20BLOBHEADER%7cDWORD%20key%20length%7cKey%20material%7c%0a%20%20%20%20%20%20%20%20DWORD%20keyMaterialLength;%0a%20%20%20%20%20%20%20%20LPBYTE%20keyMaterial;%0a%20%20%20%20%20%20%20%20keyMaterialLength%20=%20*%28DWORD*%29%28keyBlob%20&#43;%20sizeof%28BLOBHEADER%29%29;%0a%20%20%20%20%20%20%20%20keyMaterial%20=%20%28keyBlob%20&#43;%20sizeof%28BLOBHEADER%29%20&#43;%20sizeof%28DWORD%29%29;%0a%20%20%20%20%20%20%20%20if%20%28!CryptBinaryToStringA%28keyMaterial,%20keyMaterialLength,%20CRYPT_STRING_BASE64,%20keyBlobBase64,%20&amp;base64Length%29%29%0a%20%20%20%20%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20GetExportedKey!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%20%20%20%20%20%20%20%20%7d%0a%0a%20%20%20%20%20%20%20%20if%20%28keyBlobBase64%29%0a%20%20%20%20%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20std::cout%20%3c%3c%20std::endl%20%3c%3c%20%22Base64%20string%20representation%20of%20key%20blob:--------%22%20%3c%3c%20std::endl;%0a%20%20%20%20%20%20%20%20%20%20%20%20printf%28%22%25d-bit%20key%20blob:%20%25s%5cn%22,%20keyMaterialLength%20*%208,%20keyBlobBase64%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20break;%0a%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%20%20%20%20else%0a%20%20%20%20%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20keyBlobBase64%20=%20%28LPSTR%29malloc%28base64Length%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20std::vector%20%3cstd::bitset%3c8%3e%3e%20KeyBytes;%0a%20%20%20%20%20%20%20%20%20%20%20%20ExportKeyBytes%28keyBlob,%20keyBlobLength,%20KeyBytes%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20std::cout%20%3c%3c%20%22------%20_PLAINTEXTKEYBLOB%20struct%20bytes%20are%20as%20below:--------%22%20%3c%3c%20std::endl;%0a%20%20%20%20%20%20%20%20%20%20%20%20for%20%28unsigned%20int%20j%20=%200;%20j%20%3c%20keyBlobLength;%20j&#43;&#43;%29%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20printf%28%22%02x%20%22,%20%28%28char*%29keyBlob%29[j]%20&amp;%200b0000000011111111%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20std::cout%20%3c%3c%20std::endl;%0a%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%7d%0a%20%20%20%20std::cout%20%3c%3c%20%22------%20Data%20bytes%20before%20encyption:--------%22%20%3c%3c%20std::endl;%0a%20%20%20%20for%20%28DWORD%20i%20=%200;%20i%20%3c%20dwCount;%20i&#43;&#43;%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22%25d%20%22,%20rgData[i]%29;%0a%20%20%20%20%7d%0a%20%20%20%20printf%28%22%5cn%22%29;%0a%0a%20%20%20%20if%20%28!CryptEncrypt%28hKey,%200,%20TRUE,%200,%20rgData,%20&amp;dwCount,%20sizeof%28rgData%29%29%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22Error%20%25x%20during%20CryptEncrypt!%5cn%22,%20GetLastError%28%29%29;%0a%20%20%20%20%20%20%20%20goto%20Cleanup;%0a%20%20%20%20%7d%0a%20%20%20%20std::cout%20%3c%3c%20%22------%20Data%20bytes%20after%20encyption:--------%22%20%3c%3c%20std::endl;%0a%20%20%20%20for%20%28DWORD%20i%20=%200;%20i%20%3c%20dwCount;%20i&#43;&#43;%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20printf%28%22%02x%20%22,%20%28%28char*%29rgData%29[i]%20&amp;%200b0000000011111111%29;%0a%20%20%20%20%7d%0a%20%20%20%20printf%28%22%5cn%22%29;%0aCleanup:%0a%20%20%20%20free%28keyBlob%29;%0a%20%20%20%20free%28keyBlobBase64%29;%0a%20%20%20%20if%20%28hKey%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20CryptDestroyKey%28hKey%29;%0a%20%20%20%20%7d%0a%20%20%20%20if%20%28hHash%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20CryptDestroyHash%28hHash%29;%0a%20%20%20%20%7d%0a%20%20%20%20if%20%28hProv%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20CryptReleaseContext%28hProv,%200%29;%0a%20%20%20%20%7d%0a%0a%20%20%20%20return%200;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Windows.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bitset&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma comment(lib, &#34;crypt32.lib&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>BOOL <span style="color:#a6e22e">GetExportedKey</span>(HCRYPTKEY hKey, DWORD dwBlobType, LPBYTE<span style="color:#f92672">*</span> ppbKeyBlob, LPDWORD pdwBlobLen)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    DWORD dwBlobLength;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>ppbKeyBlob <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>pdwBlobLen <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Export the public key. Here the public key is exported to a 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// PUBLICKEYBLOB. This BLOB can be written to a file and
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// sent to another user.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (CryptExportKey(hKey, NULL, dwBlobType, <span style="color:#ae81ff">0</span>, NULL, <span style="color:#f92672">&amp;</span>dwBlobLength))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Size of the BLOB for the public key determined. </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error computing BLOB length.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Allocate memory for the pbKeyBlob.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>ppbKeyBlob <span style="color:#f92672">=</span> (LPBYTE)malloc(dwBlobLength))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Memory has been allocated for the BLOB. </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Out of memory. </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Do the actual exporting into the key BLOB.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (CryptExportKey(
+</span></span><span style="display:flex;"><span>        hKey,
+</span></span><span style="display:flex;"><span>        NULL,
+</span></span><span style="display:flex;"><span>        dwBlobType,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>ppbKeyBlob,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&amp;</span>dwBlobLength))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Contents have been written to the BLOB. </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>pdwBlobLen <span style="color:#f92672">=</span> dwBlobLength;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error exporting key.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        free(<span style="color:#f92672">*</span>ppbKeyBlob);
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>ppbKeyBlob <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ExportKeyBytes</span>(LPBYTE keyBlob, DWORD keyBlobLength, std<span style="color:#f92672">::</span>vector <span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>bitset<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">8</span><span style="color:#f92672">&gt;&gt;&amp;</span> KeyBytes)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">uint32_t</span> NumberOfBytes <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">*</span>)(keyBlob <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(BLOBHEADER));
+</span></span><span style="display:flex;"><span>    intptr_t StartAdrsOfKeyBytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">reinterpret_cast</span><span style="color:#f92672">&lt;</span>intptr_t<span style="color:#f92672">&gt;</span>((keyBlob <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(BLOBHEADER) <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(DWORD)));
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------Exctracted key bytes are as below--------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">uint16_t</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> NumberOfBytes; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        KeyBytes.push_back(<span style="color:#f92672">*</span>((std<span style="color:#f92672">::</span>bitset<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">8</span><span style="color:#f92672">&gt;*</span>)StartAdrsOfKeyBytes));
+</span></span><span style="display:flex;"><span>        StartAdrsOfKeyBytes<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span> Mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0b0000000011111111</span>;
+</span></span><span style="display:flex;"><span>        Mask <span style="color:#f92672">&amp;=</span> (KeyBytes[j].to_ulong());
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>hex <span style="color:#f92672">&lt;&lt;</span> Mask;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;The bit representation of key blob:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">uint16_t</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> KeyBytes.size(); j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>bitset<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">8</span><span style="color:#f92672">&gt;</span>((KeyBytes[j]));
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    HCRYPTPROV hProv <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    HCRYPTKEY hKey <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    HCRYPTHASH hHash <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    DWORD dwCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    LPBYTE keyBlob <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>    DWORD keyBlobLength;
+</span></span><span style="display:flex;"><span>    LPSTR keyBlobBase64 <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>    DWORD base64Length <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    BYTE  rgData[<span style="color:#ae81ff">512</span>] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">0x01</span>, <span style="color:#ae81ff">0x02</span>, <span style="color:#ae81ff">0x03</span>, <span style="color:#ae81ff">0x04</span>, <span style="color:#ae81ff">0x05</span> };
+</span></span><span style="display:flex;"><span>    LPWSTR wszPassword <span style="color:#f92672">=</span> (LPWSTR)<span style="color:#e6db74">L</span><span style="color:#e6db74">&#34;password12&#34;</span>;
+</span></span><span style="display:flex;"><span>    DWORD cbPassword <span style="color:#f92672">=</span> (wcslen(wszPassword) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(WCHAR);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CryptAcquireContext(
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&amp;</span>hProv,
+</span></span><span style="display:flex;"><span>        NULL,
+</span></span><span style="display:flex;"><span>        MS_DEF_PROV,
+</span></span><span style="display:flex;"><span>        PROV_RSA_FULL,
+</span></span><span style="display:flex;"><span>        CRYPT_VERIFYCONTEXT))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error %x during CryptAcquireContext!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CryptCreateHash(hProv, CALG_MD5, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">&amp;</span>hHash))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error %x during CryptCreateHash!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CryptHashData(hHash, (PBYTE)wszPassword, cbPassword, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error %x during CryptHashData!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CryptDeriveKey(hProv, CALG_RC4, hHash, CRYPT_EXPORTABLE, <span style="color:#f92672">&amp;</span>hKey))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error %x during CryptDeriveKey!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>GetExportedKey(hKey, PLAINTEXTKEYBLOB, <span style="color:#f92672">&amp;</span>keyBlob, <span style="color:#f92672">&amp;</span>keyBlobLength))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error %x during GetExportedKey!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// PLAINTEXTKEYBLOB: BLOBHEADER|DWORD key length|Key material|
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        DWORD keyMaterialLength;
+</span></span><span style="display:flex;"><span>        LPBYTE keyMaterial;
+</span></span><span style="display:flex;"><span>        keyMaterialLength <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>(DWORD<span style="color:#f92672">*</span>)(keyBlob <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(BLOBHEADER));
+</span></span><span style="display:flex;"><span>        keyMaterial <span style="color:#f92672">=</span> (keyBlob <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(BLOBHEADER) <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(DWORD));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CryptBinaryToStringA(keyMaterial, keyMaterialLength, CRYPT_STRING_BASE64, keyBlobBase64, <span style="color:#f92672">&amp;</span>base64Length))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#e6db74">&#34;Error %x during GetExportedKey!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (keyBlobBase64)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Base64 string representation of key blob:--------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#e6db74">&#34;%d-bit key blob: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, keyMaterialLength <span style="color:#f92672">*</span> <span style="color:#ae81ff">8</span>, keyBlobBase64);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            keyBlobBase64 <span style="color:#f92672">=</span> (LPSTR)malloc(base64Length);
+</span></span><span style="display:flex;"><span>            std<span style="color:#f92672">::</span>vector <span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>bitset<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">8</span><span style="color:#f92672">&gt;&gt;</span> KeyBytes;
+</span></span><span style="display:flex;"><span>            ExportKeyBytes(keyBlob, keyBlobLength, KeyBytes);
+</span></span><span style="display:flex;"><span>            std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------ _PLAINTEXTKEYBLOB struct bytes are as below:--------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> keyBlobLength; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#e6db74">&#34;%02x &#34;</span>, ((<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)keyBlob)[j] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0b0000000011111111</span>);
+</span></span><span style="display:flex;"><span>            std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------ Data bytes before encyption:--------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (DWORD i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> dwCount; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%d &#34;</span>, rgData[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CryptEncrypt(hKey, <span style="color:#ae81ff">0</span>, TRUE, <span style="color:#ae81ff">0</span>, rgData, <span style="color:#f92672">&amp;</span>dwCount, <span style="color:#66d9ef">sizeof</span>(rgData)))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Error %x during CryptEncrypt!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, GetLastError());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> Cleanup;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------ Data bytes after encyption:--------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (DWORD i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> dwCount; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%02x &#34;</span>, ((<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)rgData)[i] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0b0000000011111111</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>Cleanup:
+</span></span><span style="display:flex;"><span>    free(keyBlob);
+</span></span><span style="display:flex;"><span>    free(keyBlobBase64);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (hKey)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        CryptDestroyKey(hKey);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (hHash)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        CryptDestroyHash(hHash);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (hProv)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        CryptReleaseContext(hProv, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<p>And after running the program you will see the following output:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>Size of the BLOB for the public key determined.
+Memory has been allocated for the BLOB.
+Contents have been written to the BLOB.
+
+------Exctracted key bytes are as below--------
+83 30 c7 bb 70
+The bit representation of key blob:
+1000001100110000110001111011101101110000
+------ _PLAINTEXTKEYBLOB struct bytes are as below:--------
+08 02 00 00 01 68 00 00 05 00 00 00 83 30 c7 bb 70
+
+Base64 string representation of key blob:--------
+40-bit key blob: gzDHu3A=
+
+------ Data bytes before encyption:--------
+1 2 3 4 5
+------ Data bytes after encyption:--------
+0e 39 88 22 87</code></pre>
+    
+</div>
+<p>As you can see the key size should be <strong>5 bytes</strong>, and you can see them as <strong>83 30 c7 bb 70</strong>, however if you try to decrypt bytes <strong>0e 39 88 22 87</strong>, it does not work. I had to look inside the <strong>CryptEncrypt</strong> to see what the key was.</p>
+<hr>
+<h2 id="analysis">Analysis</h2>
+<p>For the debugging I used x64dbg and Ghidra. The two dlls that we need are cryptsp.dll and rsaenh.dll. So just find them in your windows directory, or use the provided ones in the archive. After you found them you can use symchk.exe to download the PDB files to use them with Ghidra with the following command:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>symchk.exe &#34;C:\dllname.dll&#34; /s SRV*C:\*http://msdl.microsoft.com/download/symbols</code></pre>
+    
+</div>
+<p>The command will download the PDB in C directory for the provided dll in C directory. So finally drag dll files in Ghidra and let them analyzed with PDB files. If the above command did not worked (you have to install WDK before), you can search for symchk.exe on the installed location of WDK, then open CMD as admin and them going to the location of sychk.exe them execute command in that address. So we open the file in x64dbg and put a breakpoint on CryptEncrypt.</p>
+<p><img src="/On_The_Cryptoapi/1.png" alt="Image_1"></p>
+<p>Then head to the call stack so we can put a BP inside our program to be able see passing arguments. Simple click on the highlighted green address.</p>
+<p><img src="/On_The_Cryptoapi/2.png" alt="Image_2"></p>
+<p>So we put a BP on the CryptEncrypt inside main.</p>
+<p><img src="/On_The_Cryptoapi/3.png" alt="Image_3"></p>
+<p>Now we restart debugger and hit run till hitting the BP inside main. We know CryptEncrypt takes 7 arguments and the first argument is a pointer to the hashed blob. So we just look at stack:</p>
+<p><img src="/On_The_Cryptoapi/4.png" alt="Image_4"></p>
+<p>So we just follow that address in memory by clicking on it and following it in the dump. So we just follow that address in memory by clicking on it and following it in the dump. After a little bit analysis you will notice we are seeing numbers 11 and 5 in memory regardless of number of execution, <strong>so it is a good idea to put hardware dword access breakpoint on bytes 05 00 00 00</strong>.</p>
+<p><img src="/On_The_Cryptoapi/5.png" alt="Image_5"></p>
+<p>After putting that BP, we execute the program till it gets hit.</p>
+<p><img src="/On_The_Cryptoapi/6.png" alt="Image_6"></p>
+<p>In the image you can see all the information. So CryptEncrypt uses 16 bytes keys, and you can clearly see our program output bytes <strong>83 30 c7 bb 70</strong> with following zeros. Now if you simply use key <strong>83 30 c7 bb 70 00 00 00 00 00 00 00 00 00 00 00</strong>, for <strong>RC4</strong> algorithm you can crypt our input bytes <strong>01 02 03 04 05</strong>.
+I was not able to find much information about it so I thought it’s a good idea to share it here.</p>
+<hr>
+<h2 id="last-word">Last word</h2>
+<p>Even though I was able to find the actual key for the RC4 algorithm, looking at decompiled code in Ghidra, it is not very clear for obvious reasons.</p>
+<p><img src="/On_The_Cryptoapi/7.png" alt="Image_7"></p>
+<p>If you are looking for more, you can also read <a href="https://arm-software.github.io/psa-api/crypto/1.1/IHI0086-PSA_Certified_Crypto_API-1.1.2.pdf">this</a> and <a href="https://research.nccgroup.com/wp-content/uploads/2020/07/exporting_non-exportable_rsa_keys.pdf">this</a>. But for now I think this will be enough for me to finish my other projects.</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Exists4All</li>
+            
+
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1467
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.124.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Mar 17 2024 23:00:30
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+    
+
+
+    <script
+        type="text/javascript"
+        src="/js/index_d751713.min.5eeb120f16ea146352725c420364f87befead45f678142b8f0ffbef024646931fbc06bff07a7bd6cb57fa2f8cd8a21ba6a4ee5a278ec32303a378bc1cd17f246.js"
+        integrity="sha512-XusSDxbqFGNSclxCA2T4e&#43;/q1F9ngUK48P&#43;&#43;8CRkaTH7wGv/B6e9bLV/ovjNiiG6ak7lonjsMjA6N4vBzRfyRg=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

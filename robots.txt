@@ -1,0 +1,9 @@
+User-Agent: *
+
+Disallow: /Beforestart/Beforestart.html
+Disallow: /favicon.ico
+Disallow: /DiskSpoofer/DiskSpoofer.html
+Disallow: /tags/
+Disallow: /categories/
+
+Sitemap: https://exists4all.github.io/sitemap.xml

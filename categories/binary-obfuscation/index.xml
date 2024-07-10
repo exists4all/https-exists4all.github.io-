@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Binary Obfuscation on Exists4All</title>
+    <link>https://exists4all.github.io/categories/binary-obfuscation/</link>
+    <description>Recent content in Binary Obfuscation on Exists4All</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Mar 2024 16:56:22 +0330</lastBuildDate>
+    <atom:link href="https://exists4all.github.io/categories/binary-obfuscation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SimpePECrypter</title>
+      <link>https://exists4all.github.io/posts/simpepecrypter/</link>
+      <pubDate>Tue, 19 Mar 2024 16:56:22 +0330</pubDate>
+      <guid>https://exists4all.github.io/posts/simpepecrypter/</guid>
+      <description>So it was a while since I did this project, however for some reason I wasn&amp;rsquo;t able to publish it. You can download the tutorial in the PDF format with necessary files here. And the password for the file is:&#xA;SimpePECrypter&#xD;And finally download the source code from github.&#xA;Note that I did this project in a little bit of a rush, so there are little mistakes here and there. But the results are good enough.</description>
+    </item>
+  </channel>
+</rss>
