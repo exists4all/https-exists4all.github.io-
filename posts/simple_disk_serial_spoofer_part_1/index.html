@@ -23,11 +23,11 @@
 
     
         
-            <meta name="description" content="A detailed tutorial to create a static disk serial spoofer on Windows 11" />
+            <meta name="description" content="In this tutorial we are going to find out which Kernel APIs are used to get disk serials in WIndows 11 by reverse engineering the Windows Kernel. And then patching Kernel to assign random serial disks from ring 0." />
         
 
         
-            <meta name="keywords" content="[Windows, Kernel, Driver Development, Reverse Engineering]" />
+            <meta name="keywords" content="[Windows, Kernel, Driver Development, Reverse Engineering, Kernel, Windows, Spoofer, Disk, Serial, Disk Serial, Tutorial, Static SPoofer]" />
         
 
         
@@ -39,7 +39,7 @@
 
     <title>
         
-            Simple Disk Serial Spoofer part 1 |
+            How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1 |
             Exists4All
         
     </title>
@@ -112,7 +112,7 @@
 
     <div class="header_middle">
         
-            Simple Disk Serial Spoofer part 1 -
+            How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1 -
             Exists4All
         
     </div>
@@ -158,7 +158,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/simpepecrypter/" title="./posts/simpepecrypter/">
-                        SimpePECrypter
+                        How to create your own PE Crypter with C&#43;&#43; from scratch
                     </a>
                 </li>
             
@@ -166,7 +166,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/on_the_cryptoapi/" title="./posts/on_the_cryptoapi/">
-                        On The Cryptoapi
+                        Analyzing CryptoAPI key extraction on Windows using CryptExportKey
                     </a>
                 </li>
             
@@ -174,7 +174,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/simple_disk_serial_spoofer_part_1/" title="./posts/simple_disk_serial_spoofer_part_1/">
-                        Simple Disk Serial Spoofer part 1
+                        How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1
                     </a>
                 </li>
             
@@ -182,7 +182,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/before_start/" title="./posts/before_start/">
-                        Before Start
+                        Important notes about Kernel development on Windows
                     </a>
                 </li>
             
@@ -214,7 +214,7 @@
 
         <div class="title">
             <h1 class="title-header">
-                Simple Disk Serial Spoofer part 1
+                How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1
             </h1>
 
             <div class="author-date-readtime">
@@ -372,7 +372,7 @@
     
 
     
-        Simple Disk Serial Spoofer part 1
+        How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1
     
 </a>
 
@@ -383,14 +383,28 @@
         </div>
 
         
-            <nav id="TableOfContents"></nav>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#analyzing-the-kernel">Analyzing the Kernel</a>
+      <ul>
+        <li><a href="#setting-up-windbg">Setting up WinDBG</a></li>
+        <li><a href="#finding-responsible-driver-that-gets-serials">Finding responsible driver that gets serials</a></li>
+      </ul>
+    </li>
+    <li><a href="#last-word">Last word</a></li>
+  </ul>
+</nav>
         
 
 
         <div class="content">
             
-                <p>In this tutorial we are going to create a static disk drive serial number spoofer. This project will be a little long and need some basic knowledge about operation systems and reverse engineering. We are going to use visual studio community, IDA and windbg and I used windows 11 enterprise.</p>
+                <h2 id="introduction">Introduction</h2>
+<p>In this tutorial we are going to create a static disk drive serial number spoofer. This project will be a little long and need some basic knowledge about operation systems and reverse engineering. We are going to use visual studio community, IDA and windbg and I used windows 11 enterprise.</p>
 <hr>
+<h2 id="analyzing-the-kernel">Analyzing the Kernel</h2>
+<h3 id="setting-up-windbg">Setting up WinDBG</h3>
 <p>The first step is to find out how windows get that information. By googling you can see easily you have to use wmic commands. If you open CMD and execute the <strong>wmic diskdrive get serialnumber</strong>, you can retrieve all the disk serials.
 So that is logical analyzing wmic in windbg, however if you do that you will find out wmic tokenize commands and send them to the kernel and then retrieve data in a xml file and fetch from there. So for simplicity we are not going to analyze wmic. Instead we are going to access wmic command directly using C++ and use debug command to see which kernel API used to get those data.</p>
 <p>But for the people who are interested in analyzing wmic i will point to a little hint to do it.First of all run your virtual OS and attach kernel debugger aka windbg to it. Break windbg and use <strong>!sym noisy</strong> command and then execute <strong>lm</strong> and finally <strong>.reload</strong> to reload all needed pdbs. Also keep it in mind to add debug filter print to your OS so you can see dbgprint data in debugger, just google it.After windbg downloaded all the necessary data open execute <strong>g</strong> command and run wmic on VM. After that execute <strong>.reload /f wmic.exe</strong> this will cause windbg download wmic pdb file so you can copy it from windbg path for pdbs and use it with ida to analyzing wmic.exe. After this we want to get in to the wmic.exe context to do that execute <strong>!process 0 0 wmic.exe</strong> keep note from you process ID and then execute <strong>.process /i YOURPROCESSID</strong> execute <strong>g</strong> command to get to the context.</p>
@@ -476,6 +490,7 @@ DBGHELP: I:\Codes\UserFetch\x64\Debug\UserFetch.pdb cached to C:\Program Files (
 </div>
 <p>Also you have to be able to see your source code alongside other information like below.</p>
 <p><img src="/Simple_Disk_Serial_Spoofer_part_1/LoadSelfPDB.jpg" alt="Image_1"></p>
+<h3 id="finding-responsible-driver-that-gets-serials">Finding responsible driver that gets serials</h3>
 <p>Now this part is very very important, we want to be able to go to the kernel side and continue tracing kernel APIs there. To do this we need to find <strong>syscall</strong> instructions first.To do this just execute <strong>pc</strong> and then <strong>t</strong> command respectively till you reach a syscall.
 After that we need to find a function that will cause dispatch from user mode to kernel mode using the <strong>SSD table</strong> which I will explain later. execute <strong>p</strong> command till you reach first <strong>if</strong> then using <strong>t</strong> to trace in to it and then use mentioned instructions.</p>
 <p>After a while you will hit <strong>DeviceIoControl</strong> which is look like below:</p>
@@ -622,6 +637,7 @@ Simply keep continuing till you hit the desired break point, now if you analyze 
 </div>
 <p>By some analyzing you can find out code will keep data in <strong>[rsp+20h]</strong>, simply if we chek this place on memory you see the below information there:</p>
 <p><img src="/Simple_Disk_Serial_Spoofer_part_1/SerialsInMeomory.jpg" alt="Image_3"></p>
+<h2 id="last-word">Last word</h2>
 <p>So we confirmed this is the function, however the used struct is still unknown. We will discuss how to find it in the next part, but we mention one of the time consuming methods here and keep the neat method for the next part.You can use <strong>dt module!</strong>* which will be <strong>dt storport!</strong>* to get all the structs that <strong>strport.sys</strong> uses and then analyze them manually.
 If you spend a lot of time doing reverse engineering you can confirm the struct is <strong>_RAID_UNIT_EXTENSION</strong> which will be discussed in next part.</p>
 
@@ -672,7 +688,7 @@ If you spend a lot of time doing reverse engineering you can confirm the struct 
                 <li>
                     
                         Word Count:
-                        1667
+                        1682
                     
                 </li>
             

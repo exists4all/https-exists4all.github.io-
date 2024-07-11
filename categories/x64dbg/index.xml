@@ -9,11 +9,11 @@
     <lastBuildDate>Sun, 17 Mar 2024 23:00:30 +0330</lastBuildDate>
     <atom:link href="https://exists4all.github.io/categories/x64dbg/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>On The Cryptoapi</title>
+      <title>Analyzing CryptoAPI key extraction on Windows using CryptExportKey</title>
       <link>https://exists4all.github.io/posts/on_the_cryptoapi/</link>
       <pubDate>Sun, 17 Mar 2024 23:00:30 +0330</pubDate>
       <guid>https://exists4all.github.io/posts/on_the_cryptoapi/</guid>
-      <description>I had to work on a PE for reverse engineering for a few weeks, the PE using an extensive amount of encryption/decryption of memory fragments to make it harder to reverse engineer it. However, that PE is for another time. But I had to write a manual encrypter/decrypter for those memory fragments to be able to patch some specific parts without changing instructions size and then crypting those bytes and replacing those specific memory fragments.</description>
+      <description>Introduction I had to work on a PE for reverse engineering for a few weeks, the PE using an extensive amount of encryption/decryption of memory fragments to make it harder to reverse engineer it. However, that PE is for another time. But I had to write a manual encrypter/decrypter for those memory fragments to be able to patch some specific parts without changing instructions size and then crypting those bytes and replacing those specific memory fragments.</description>
     </item>
   </channel>
 </rss>

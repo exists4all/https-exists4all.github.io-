@@ -9,11 +9,11 @@
     <lastBuildDate>Sun, 17 Mar 2024 07:37:04 +0330</lastBuildDate>
     <atom:link href="https://exists4all.github.io/tags/ntoskrnl/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Simple Disk Serial Spoofer part 1</title>
+      <title>How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1</title>
       <link>https://exists4all.github.io/posts/simple_disk_serial_spoofer_part_1/</link>
       <pubDate>Sun, 17 Mar 2024 07:37:04 +0330</pubDate>
       <guid>https://exists4all.github.io/posts/simple_disk_serial_spoofer_part_1/</guid>
-      <description>In this tutorial we are going to create a static disk drive serial number spoofer. This project will be a little long and need some basic knowledge about operation systems and reverse engineering. We are going to use visual studio community, IDA and windbg and I used windows 11 enterprise.&#xA;The first step is to find out how windows get that information. By googling you can see easily you have to use wmic commands.</description>
+      <description>Introduction In this tutorial we are going to create a static disk drive serial number spoofer. This project will be a little long and need some basic knowledge about operation systems and reverse engineering. We are going to use visual studio community, IDA and windbg and I used windows 11 enterprise.&#xA;Analyzing the Kernel Setting up WinDBG The first step is to find out how windows get that information. By googling you can see easily you have to use wmic commands.</description>
     </item>
   </channel>
 </rss>

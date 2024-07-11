@@ -23,11 +23,11 @@
 
     
         
-            <meta name="description" content="Doing some experiment on Windows Crypto API to gain some knowledge." />
+            <meta name="description" content="Doing some experiments on Windows Crypto API to gain some knowledge. We use some minimal code in C&#43;&#43; and x64dbg to analyze our program to see how Crypto API works." />
         
 
         
-            <meta name="keywords" content="[Windows, Cryptography, x64dbg, Reverse Engineering]" />
+            <meta name="keywords" content="[Windows, CryptExportKey CryptoAPI, C plus plus, Cryptography, x64dbg, Reverse Engineering]" />
         
 
         
@@ -39,7 +39,7 @@
 
     <title>
         
-            On The Cryptoapi |
+            Analyzing CryptoAPI key extraction on Windows using CryptExportKey |
             Exists4All
         
     </title>
@@ -112,7 +112,7 @@
 
     <div class="header_middle">
         
-            On The Cryptoapi -
+            Analyzing CryptoAPI key extraction on Windows using CryptExportKey -
             Exists4All
         
     </div>
@@ -158,7 +158,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/simpepecrypter/" title="./posts/simpepecrypter/">
-                        SimpePECrypter
+                        How to create your own PE Crypter with C&#43;&#43; from scratch
                     </a>
                 </li>
             
@@ -166,7 +166,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/on_the_cryptoapi/" title="./posts/on_the_cryptoapi/">
-                        On The Cryptoapi
+                        Analyzing CryptoAPI key extraction on Windows using CryptExportKey
                     </a>
                 </li>
             
@@ -174,7 +174,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/simple_disk_serial_spoofer_part_1/" title="./posts/simple_disk_serial_spoofer_part_1/">
-                        Simple Disk Serial Spoofer part 1
+                        How to make your own Simple Kernel static Disk Serial Spoofer on Windows part 1
                     </a>
                 </li>
             
@@ -182,7 +182,7 @@
             
                 <li class="file">
                     <a href="https://exists4all.github.io/posts/before_start/" title="./posts/before_start/">
-                        Before Start
+                        Important notes about Kernel development on Windows
                     </a>
                 </li>
             
@@ -214,7 +214,7 @@
 
         <div class="title">
             <h1 class="title-header">
-                On The Cryptoapi
+                Analyzing CryptoAPI key extraction on Windows using CryptExportKey
             </h1>
 
             <div class="author-date-readtime">
@@ -360,7 +360,7 @@
     
 
     
-        On The Cryptoapi
+        Analyzing CryptoAPI key extraction on Windows using CryptExportKey
     
 </a>
 
@@ -373,6 +373,7 @@
         
             <nav id="TableOfContents">
   <ul>
+    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#cryptoapi-basic-structure">CryptoAPI basic structure</a></li>
     <li><a href="#example-source-code">Example source code</a></li>
     <li><a href="#analysis">Analysis</a></li>
@@ -384,7 +385,8 @@
 
         <div class="content">
             
-                <p>I had to work on a PE for reverse engineering for a few weeks, the PE using an extensive amount of encryption/decryption of memory fragments to make it harder to reverse engineer it. However, that PE is for another time. But I had to write a manual encrypter/decrypter for those memory fragments to be able to patch some specific parts without changing instructions size and then crypting those bytes and replacing those specific memory fragments. However it seems the key that CryptoAPI uses to do the job is not the same as the key that you could get with CryptExportKey so I decided to look inside these functions to see what the actual key is.</p>
+                <h2 id="introduction">Introduction</h2>
+<p>I had to work on a PE for reverse engineering for a few weeks, the PE using an extensive amount of encryption/decryption of memory fragments to make it harder to reverse engineer it. However, that PE is for another time. But I had to write a manual encrypter/decrypter for those memory fragments to be able to patch some specific parts without changing instructions size and then crypting those bytes and replacing those specific memory fragments. However it seems the key that CryptoAPI uses to do the job is not the same as the key that you could get with CryptExportKey so I decided to look inside these functions to see what the actual key is.</p>
 <hr>
 <h2 id="cryptoapi-basic-structure">CryptoAPI basic structure</h2>
 <p>CryptoAPI passes the input data as objects between its functions. The obvious reason for that is to make the attacker lifes harder. It takes your data, then hashes it with the intended algorithm, deriving its own specific key, and using them to do the job.
@@ -736,7 +738,7 @@ I was not able to find much information about it so I thought it’s a good idea
                 <li>
                     
                         Word Count:
-                        1467
+                        1468
                     
                 </li>
             

@@ -9,11 +9,11 @@
     <lastBuildDate>Sun, 17 Mar 2024 06:36:21 +0330</lastBuildDate>
     <atom:link href="https://exists4all.github.io/tags/notes-on-kernel/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Before Start</title>
+      <title>Important notes about Kernel development on Windows</title>
       <link>https://exists4all.github.io/posts/before_start/</link>
       <pubDate>Sun, 17 Mar 2024 06:36:21 +0330</pubDate>
       <guid>https://exists4all.github.io/posts/before_start/</guid>
-      <description>Welcome to my kernel programming tutorial document. Be sure to read these notes before starting.&#xA;Kernel programming is not anything like user mode programming, information about its structure is very limited and most of the time you have to dig very deep into MSDN documentation to understand where you need to start.&#xA;Kernel mode codes have to be perfect, any flaw in them will cause serious problems and most of the time lead to BSOD ( blue screen of death) if they are not treated perfectly.</description>
+      <description>Introduction Welcome to my kernel programming tutorial document. Be sure to read these notes before starting.&#xA;Important notes Kernel programming is not anything like user mode programming, information about its structure is very limited and most of the time you have to dig very deep into MSDN documentation to understand where you need to start.&#xA;Kernel mode codes have to be perfect, any flaw in them will cause serious problems and most of the time lead to BSOD ( blue screen of death) if they are not treated perfectly.</description>
     </item>
   </channel>
 </rss>
