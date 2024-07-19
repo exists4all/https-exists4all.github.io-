@@ -1,7 +1,5 @@
 User-Agent: *
 
-Disallow: /Beforestart/Beforestart.html
-Disallow: /DiskSpoofer/DiskSpoofer.html
 Disallow: /tags/
 Disallow: /categories/
 
